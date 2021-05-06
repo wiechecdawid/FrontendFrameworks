@@ -1,10 +1,16 @@
+import styled from'styled-components'
+
+const MenuList = styled.ul`
+    list-style-type: none;
+`
+
 export const ExpandedMenu = () => {
     const menuItems = [ 'Home', 'Publications', 'People', 'Entities', 'Administration' ];
     
     return (
-        <ul>
+        <MenuList>
             {menuItems.map( item => 
                 <li key={item}>{item}</li>)}
-        </ul>
+        </MenuList>
     )
 }
