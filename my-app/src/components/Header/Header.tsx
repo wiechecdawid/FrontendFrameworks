@@ -3,8 +3,12 @@ import { Colors } from '../../styledHelpers/Colors';
 import useDropdown from 'react-dropdown-hook';
 import { ExpandedMenu } from '../ExpandedMenu/ExpandedMenu'
 import { HomeButton } from '../HomeButton/HomeButton';
+import { ReactLogo } from '../ReactLogo/ReactLogo';
+import { SearchBar } from '../SearchBar/SearchaBar';
+import { RightSide } from '../RightSide/RightSide';
 
 const TopBar = styled.header`
+    display: flex;
     background-color: ${Colors.white};
     position: fixed;
     box-sizing: border-box;
@@ -12,8 +16,6 @@ const TopBar = styled.header`
     padding: 0.7em;
 `
 const MenuWrapper = styled.div`
-    display: flex;
-    justify-content: left;
     color: #023144;
 `
 
@@ -25,6 +27,7 @@ export const Header = () => {
 
     return (
         <TopBar>
+            <ReactLogo />
             <MenuWrapper ref={wrapperRef}>
                 <div onClick={menuHandler}>
                     <HomeButton />
@@ -32,6 +35,8 @@ export const Header = () => {
                 {dropdownOpen &&
                     <ExpandedMenu />}
             </MenuWrapper>
+            <SearchBar />
+            <RightSide />
         </TopBar>
     )
 }
