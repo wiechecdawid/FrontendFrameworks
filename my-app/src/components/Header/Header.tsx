@@ -9,6 +9,7 @@ import { RightSide } from '../RightSide/RightSide';
 
 const TopBar = styled.header`
     display: flex;
+    justify-content: space-around;
     background-color: ${Colors.white};
     position: fixed;
     box-sizing: border-box;

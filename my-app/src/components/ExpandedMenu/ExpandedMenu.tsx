@@ -2,6 +2,7 @@ import styled from'styled-components'
 
 const MenuList = styled.ul`
     list-style-type: none;
+    position: absolute;
 `
 
 export const ExpandedMenu = () => {
