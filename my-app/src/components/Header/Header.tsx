@@ -11,7 +11,6 @@ const TopBar = styled.header`
     display: flex;
     justify-content: space-around;
     background-color: ${Colors.white};
-    position: fixed;
     box-sizing: border-box;
     width: 100vw;
     padding: 0.7em;
