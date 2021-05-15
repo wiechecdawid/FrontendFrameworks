@@ -1,21 +1,23 @@
 import styled from 'styled-components'
 import avatar from '../../../assets/images/random.jpg'
 import { Colors } from '../../../styledHelpers/Colors'
+import { ProfileNetwork } from './ProfileNetwork/ProfileNetwork'
+import { ProfilePublications } from './ProfilePublications/ProfilePublications'
 
 const ProfileDiv = styled.div`
-    width: 15vw;
-    margin: 5vw;
-    padding: 3vw;
+    width: 10vw;
+    margin: 4vw;
+    padding: 1vw;
     background-color: ${Colors.white};
     border-radius: 5%;
 `
 
 const Avatar = styled.div`
-    width: 60%;
+    text-align: center;
     & img {
         border-radius: 50%;
         overflow: hidden;
-        width: 100%;
+        width: 70%;
         align-self: center;
     }
 `
@@ -34,9 +36,11 @@ const JobInfo = styled.div`
 export const ProfileSummary = () => (
     <ProfileDiv>
         <Avatar>
-            <img src={avatar} />
+            <img src={avatar} alt="avatar" />
         </Avatar>
         <NameDiv>First Second</NameDiv>
         <JobInfo>Job title - Company</JobInfo>
+        <ProfileNetwork />
+        <ProfilePublications />
     </ProfileDiv>
 )
