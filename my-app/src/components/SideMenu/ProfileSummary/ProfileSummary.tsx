@@ -6,7 +6,6 @@ import { ProfilePublications } from './ProfilePublications/ProfilePublications'
 
 const ProfileDiv = styled.div`
     width: 10vw;
-    margin: 4vw;
     padding: 1vw;
     background-color: ${Colors.white};
     border-radius: 5%;
