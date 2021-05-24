@@ -16,9 +16,6 @@ const Image = styled.div`
     &:hover {
         opacity: .5;
     }
-
-    & p {
-    }
 `
 
 export const NewsHeader = () => (
