@@ -9,6 +9,7 @@ export const Workspaces = () => (
             <SliderElement />
             <SliderElement />
             <SliderElement />
+            <SliderElement />
         </Slider>
     </div>
 )

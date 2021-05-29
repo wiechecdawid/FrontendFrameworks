@@ -5,6 +5,10 @@ const Input = styled.input`
     border-radius: 15px;
     min-width: 30vw;
 
+    &::-webkit-input-placeholder {
+        padding-left: 2px;
+    }
+
     &:focus {
         outline: none !important;
         border: 2px solid green;

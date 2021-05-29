@@ -5,7 +5,7 @@ import { Colors } from '../../../../styledHelpers/Colors'
 
 const SliderBox = styled.div`
     background-color: ${ Colors.white };
-    max-width: 25vw;
+    min-width: 25vw;
     height: 20vw;
     position: relative;
 
@@ -14,8 +14,17 @@ const SliderBox = styled.div`
     }
 
     & p {
-        font-size: .5em;
         color: gray;
+        padding: 2%;
+        font-size: .9em;
+        margin-top: 20%;
+    }
+
+    & h2 {
+        position: absolute;
+        z-index: 2;
+        top: 35%;
+        right: 10%;
     }
 
     & > div {
@@ -52,7 +61,9 @@ export const SliderElement = () => (
             <div className="slider-avatar">
                 <img className="slider-profile" src={mac} alt="mac" />
             </div>
-            <p>Lorem ipsum</p>
+            <h2>Lorem ipsum</h2>
+            
         </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet, nulla sodales vestibulum rutrum, enim magna lobortis metus, ut luctus turpis nisi eget magna.</p>
     </SliderBox>
 )

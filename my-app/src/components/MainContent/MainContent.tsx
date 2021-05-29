@@ -4,6 +4,7 @@ import { Workspaces } from './Workspaces/Workspaces'
 
 const MainContextWrapper = styled.div`
     margin: 2vw;
+    max-width: 78vw
 `
 
 export const MainContent = () => (
