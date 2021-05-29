@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { Colors } from '../../styledHelpers/Colors';
 import useDropdown from 'react-dropdown-hook';
 import { ExpandedMenu } from '../ExpandedMenu/ExpandedMenu'
-import { HomeButton } from '../HomeButton/HomeButton';
-import { ReactLogo } from '../ReactLogo/ReactLogo';
-import { SearchBar } from '../SearchBar/SearchaBar';
-import { RightSide } from '../RightSide/RightSide';
+import { HomeButton } from './HomeButton/HomeButton';
+import { ReactLogo } from './ReactLogo/ReactLogo';
+import { SearchBar } from './SearchBar/SearchaBar';
+import { RightSide } from './RightSide/RightSide';
 
 const TopBar = styled.header`
     display: flex;
