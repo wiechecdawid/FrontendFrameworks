@@ -7,6 +7,7 @@ const MenuList = styled.ul`
     z-index:2;
 
     & li {
+        width: 100%;
         background-color: ${Colors.white};
         border: 1px solid ${Colors.black};
     }
