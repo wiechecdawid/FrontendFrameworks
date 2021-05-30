@@ -1,14 +1,15 @@
 import { FC } from 'react'
 import { Colors } from '../../../../styledHelpers/Colors'
 import styled from 'styled-components'
+import { MouseEventHandler } from 'react'
 
-interface Props {
-}
+interface Props {}
 
 const SliderWrapper = styled.div`
     position: relative;
     overflow: hidden;
     display: flex;
+    flex-direction: row;
 
     & > * {
         margin: .1em .4em;
@@ -33,6 +34,7 @@ const MoveButton = styled.button`
     }
 
     &.left {
+        left: 0px;
         margin-left: 2%;
     }
 
@@ -42,10 +44,20 @@ const MoveButton = styled.button`
     }
 `
 
-export const Slider: FC<Props> = ({ children }) => (
-    <SliderWrapper>
-        { children }
-        <MoveButton className="left">&lt;</MoveButton>
-        <MoveButton className="right">&gt;</MoveButton>
-    </SliderWrapper>
-)
+export const Slider: FC<Props> = ({ children }) => {
+    const sideHandler: MouseEventHandler<HTMLButtonElement> = (ev) => {
+        let but = ev.target as HTMLElement;
+        let parentDiv = but.parentElement;
+        let fdir = parentDiv?.style.flexDirection;
+
+        fdir = but.className==="left" ? "row" : "row-reverse";
+    }
+    
+    return (
+        <SliderWrapper>
+            { children }
+            <MoveButton className="left" onClick={ sideHandler }>&lt;</MoveButton>
+            <MoveButton className="right">&gt;</MoveButton>
+        </SliderWrapper>
+    )
+}
