@@ -1,7 +1,6 @@
-import { FC } from 'react'
+import { FC, useState, useEffect, MouseEventHandler } from 'react'
 import { Colors } from '../../../../styledHelpers/Colors'
 import styled from 'styled-components'
-import { MouseEventHandler } from 'react'
 
 interface Props {}
 
@@ -45,12 +44,15 @@ const MoveButton = styled.button`
 `
 
 export const Slider: FC<Props> = ({ children }) => {
+    const [ direction, setDirection ] = useState("row");
+
     const sideHandler: MouseEventHandler<HTMLButtonElement> = (ev) => {
         let but = ev.target as HTMLElement;
         let parentDiv = but.parentElement;
         let fdir = parentDiv?.style.flexDirection;
 
         fdir = but.className==="left" ? "row" : "row-reverse";
+        setDirection(fdir);
     }
     
     return (

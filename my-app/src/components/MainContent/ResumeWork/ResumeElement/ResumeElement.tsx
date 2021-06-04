@@ -11,6 +11,11 @@ const ResumeWrapper = styled.div`
     background-color: ${ Colors.white };
     margin-bottom: 5px;
     padding: 2px;
+
+    &:hover {
+        background-color: ${ Colors.grey };
+        cursor: pointer;
+    }
     
     & h3 {
         color: blue;

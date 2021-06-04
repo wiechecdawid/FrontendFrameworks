@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 import streetView from '../../../../assets/images/view.jpg'
 
+interface Props {
+    title: string,
+    body: string
+}
+
 const Image = styled.div`
     min-width: 40%;
     min-height: 25vw;
@@ -17,10 +22,11 @@ const Image = styled.div`
     }
 `
 
-export const NewsHeader = () => (
+export const NewsHeader = ({title, body}: Props) => (
     <Image>
+        <h1>{ title }</h1>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum lorem id interdum tempor. Aenean hendrerit porta aliquet. Suspendisse consequat pharetra placerat. Sed viverra congue tempor. Fusce faucibus at urna tincidunt tempus. Integer fringilla pharetra est rutrum consectetur. Maecenas id erat enim.
+            { body }
         </p>
     </Image>
 )

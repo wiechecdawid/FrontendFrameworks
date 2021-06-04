@@ -9,6 +9,11 @@ const SliderBox = styled.div`
     height: 20vw;
     position: relative;
 
+    &:hover {
+        background-color: ${ Colors.grey };
+        cursor: pointer;
+    }
+
     & span {
         font-size: 1em;
     }
