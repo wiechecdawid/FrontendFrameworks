@@ -18,8 +18,8 @@ export const LatestPublications = () => {
                 { service.status === 'loading' && <div>Loading...</div> }
                 { service.status === 'loaded' && 
                     <LatestDiv> 
-                        <NewsHeader title={service.payload[0].title} body={service.payload[0].body} /> 
-                        <OtherNews />
+                        <NewsHeader title={ service.payload[0].title} body={service.payload[0].body } /> 
+                        <OtherNews posts={ service.payload } />
                     </LatestDiv> }
                 { service.status === 'error' && (
                     <div>Error: {service.status}</div>

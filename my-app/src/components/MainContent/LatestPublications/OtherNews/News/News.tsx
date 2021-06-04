@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 import streetView from '../../../../../assets/images/view.jpg'
+import { Post } from '../../../../../entities/post'
+
+interface Props {
+    post: Post
+}
 
 const NewsWrapper = styled.div`
     display: flex;
@@ -18,9 +23,9 @@ const NewsWrapper = styled.div`
     }
 `
 
-export const News = () => (
+export const News = ({ post }: Props) => (
     <NewsWrapper>
         <img src={streetView} />
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis porro saepe aperiam atque in? Pariatur porro, asperiores in expedita molestias, voluptas distinctio earum consequatur a quaerat obcaecati aut minima minus?</div>
+        <div>{ post.body }</div>
     </NewsWrapper>
 )
