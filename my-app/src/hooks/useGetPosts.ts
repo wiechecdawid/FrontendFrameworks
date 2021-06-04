@@ -10,9 +10,11 @@ export const useGetPosts = () => {
     useEffect( () => {
         fetch( 'https://jsonplaceholder.typicode.com/posts' )
         .then( response => response.json() )
-        .then( data => setResult({
-            status: 'loaded',
-            payload: [...data]
+        .then( data => setResult( () => {
+            return {
+                status: 'loaded',
+                payload: [...data]
+            }
         }))
         .catch( err => setResult({status: 'error', error: err}) );
     }, []);

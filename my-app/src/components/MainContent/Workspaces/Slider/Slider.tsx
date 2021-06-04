@@ -47,19 +47,30 @@ export const Slider: FC<Props> = ({ children }) => {
     const [ direction, setDirection ] = useState("row");
 
     const sideHandler: MouseEventHandler<HTMLButtonElement> = (ev) => {
-        let but = ev.target as HTMLElement;
-        let parentDiv = but.parentElement;
-        let fdir = parentDiv?.style.flexDirection;
+        const but = ev.target as HTMLButtonElement;
+        console.log(but.classList)
 
-        fdir = but.className==="left" ? "row" : "row-reverse";
-        setDirection(fdir);
+        setDirection( () => {
+            if( direction === "row" )
+                return but.classList.contains("rigth") ? "row-reverse" : "row"
+
+            return but.classList.contains("left") ? "row" : "row-reverse"
+        });
     }
+
+    useEffect( () => {
+        let wrapper = document.querySelector('.workspace-slider') as HTMLElement;
+        wrapper.style.flexDirection = direction;
+
+        console.log(`${direction}, ${wrapper.style.flexDirection}`)
+
+    }, [ direction ])
     
     return (
-        <SliderWrapper>
+        <SliderWrapper className="workspace-slider">
             { children }
             <MoveButton className="left" onClick={ sideHandler }>&lt;</MoveButton>
-            <MoveButton className="right">&gt;</MoveButton>
+            <MoveButton className="right" onClick={ sideHandler }>&gt;</MoveButton>
         </SliderWrapper>
     )
 }
