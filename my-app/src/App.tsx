@@ -2,13 +2,37 @@
 import './App.css';
 import { Header } from './components/Header/Header';
 import { MainPage } from './components/MainPage/MainPage';
+import { BrowserRouter, Switch as Routes, Route } from 'react-router-dom';
+import { Profile } from './components/Profile/Profile';
+import { Entities } from './components/Entities/Entities';
+
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <MainPage />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          
+          <Route path="/profile">
+            <Profile />
+          </Route>
+
+          <Route path="/entities">
+            <Entities />
+          </Route>
+
+          <Route path="/" exact={ true } >
+            <MainPage />
+          </Route>
+
+          <Route path="/*">
+            <p>Not Found</p>
+          </Route>
+
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

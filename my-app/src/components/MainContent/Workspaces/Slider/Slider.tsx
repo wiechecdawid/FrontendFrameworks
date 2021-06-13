@@ -14,6 +14,7 @@ const SliderWrapper = styled.div`
         margin: .1em .4em;
     }
 `
+//TODO: Find a way to implement an animation
 
 const MoveButton = styled.button`
     position: absolute;
@@ -48,14 +49,10 @@ export const Slider: FC<Props> = ({ children }) => {
 
     const sideHandler: MouseEventHandler<HTMLButtonElement> = (ev) => {
         const but = ev.target as HTMLButtonElement;
-        console.log(but.classList)
 
-        setDirection( () => {
-            if( direction === "row" )
-                return but.classList.contains("rigth") ? "row-reverse" : "row"
-
-            return but.classList.contains("left") ? "row" : "row-reverse"
-        });
+        setDirection( () => 
+            but.classList.item(2) === "right" ? "row-reverse" : "row"
+        );
     }
 
     useEffect( () => {

@@ -9,4 +9,9 @@ export const OptionWrapper = styled.div`
         width: 1em;
         padding-right: 0.5em;
     }
+
+    & > div:hover {
+        cursor: pointer;
+        border: 1px solid;
+    }
 `
