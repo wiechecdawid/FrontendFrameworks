@@ -9,6 +9,11 @@ const ProfileDiv = styled.div`
     padding: 1vw;
     background-color: ${Colors.white};
     border-radius: 5%;
+
+    & a {
+        text-decoration: none;
+        color: ${ Colors.black };
+    }
 `
 
 const Avatar = styled.div`
@@ -18,6 +23,11 @@ const Avatar = styled.div`
         overflow: hidden;
         width: 70%;
         align-self: center;
+
+        &:hover {
+            width: 80%;
+            cursor: pointer;
+        }
     }
 `
 
@@ -30,15 +40,18 @@ const JobInfo = styled.div`
     color: #babdae;
     font-size: 0.6em;
     border-bottom: 2px solid #babdae;
+    margin-bottom: 2px;
 `
 
 export const ProfileSummary = () => (
     <ProfileDiv>
-        <Avatar>
-            <img src={avatar} alt="avatar" />
-        </Avatar>
-        <NameDiv>First Second</NameDiv>
-        <JobInfo>Job title - Company</JobInfo>
+        <a href="/profile">
+            <Avatar>
+                <img src={avatar} alt="avatar" />
+            </Avatar>
+            <NameDiv>First Second</NameDiv>
+            <JobInfo>Job title - Company</JobInfo>
+        </a>
         <ProfileNetwork />
         <ProfilePublications />
     </ProfileDiv>

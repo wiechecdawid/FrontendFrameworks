@@ -6,6 +6,11 @@ const PublicationsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     font-size: 0.7em;
+
+    &:hover {
+        border: 1px solid;
+        cursor: pointer;
+    }
 `
 
 const PublicationsLogo = () => (
