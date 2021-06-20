@@ -1,19 +1,13 @@
 import { FC } from 'react'
-import styled from 'styled-components'
 import publications from '../../../assets/icons/publications.png'
 import ecosystem from '../../../assets/icons/ecosystem.png'
 import entities from '../../../assets/icons/entities.png'
 import { OptionWrapper } from '../../common/OptionWrapper/OptionWrapper'
-import { Colors } from '../../../styledHelpers/Colors'
+import Link from '../../common/Link/Link'
 
 interface IProps {
     option: string
 }
-
-const Link = styled.a`
-    text-decoration: none;
-    color: ${ Colors.black }
-`
 
 export const SideOption: FC<IProps> = ( { option } ) => {
     const icon = () => {
