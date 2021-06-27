@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { News } from './News/News'
 import { Subtitle } from '../../../common/Subtitle/Subtitle'
 import { Post } from '../../../../entities/post'
+import Link from '../../../common/Link/Link'
 
 interface Props {
     posts: Post[]
@@ -20,6 +21,6 @@ export const OtherNews = ({posts}: Props) => (
         <News post={ posts[1] } />
         <News post={ posts[2] } />
         <News post={ posts[3] } />
-        <div>See more publications</div>
+        <Link href="publications"><div>See more publications</div></Link>
     </OtherNewsWrapper>
 )
