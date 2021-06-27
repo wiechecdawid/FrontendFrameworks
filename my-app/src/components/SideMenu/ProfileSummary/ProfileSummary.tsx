@@ -3,6 +3,7 @@ import avatar from '../../../assets/images/random.jpg'
 import { Colors } from '../../../styledHelpers/Colors'
 import { ProfileNetwork } from './ProfileNetwork/ProfileNetwork'
 import { ProfilePublications } from './ProfilePublications/ProfilePublications'
+import { Avatar } from '../../common/Avatar/Avatar'
 
 const ProfileDiv = styled.div`
     width: 10vw;
@@ -13,21 +14,6 @@ const ProfileDiv = styled.div`
     & a {
         text-decoration: none;
         color: ${ Colors.black };
-    }
-`
-
-const Avatar = styled.div`
-    text-align: center;
-    & img {
-        border-radius: 50%;
-        overflow: hidden;
-        width: 70%;
-        align-self: center;
-
-        &:hover {
-            width: 80%;
-            cursor: pointer;
-        }
     }
 `
 

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import { Colors } from '../../styledHelpers/Colors'
+import { ProfileHeader } from './ProfileHeader/ProfileHeader'
+import { ProfileTags } from './ProfileTags/ProfileTags'
 
 const ProfileWrapper = styled.div`
     background-color: ${ Colors.white };
@@ -12,6 +14,7 @@ const ProfileWrapper = styled.div`
 
 export const Profile = () => (
     <ProfileWrapper>
-        Profile content...
+        <ProfileHeader />
+        <ProfileTags />
     </ProfileWrapper>
 )
